@@ -1,0 +1,21 @@
+{% extends 'buscador/base.html' %}
+{% block content %}
+	<div class="container">
+		<div class="row">
+			<div class="six columns">
+				<img class="descripcion-imagen shadows" src="{{ animal.picture }}">
+			</div>
+			<div class="six columns">
+				<p class="descripcion-texto">
+					<strong>Nombre:</strong> {{ animal.nombre }}
+					<br>
+					<strong>Fecha de publicacion:</strong> {{ animal.fecha_publicacion }}
+					<br>
+					<strong>Tipo:</strong> {{ animal.tipo }}
+					<br>
+					<strong>Descripcion:</strong> {{ animal.descripcion }}
+				</p>
+			</div>
+		</div>
+	</div>
+{% endblock %}

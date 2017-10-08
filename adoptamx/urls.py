@@ -16,6 +16,10 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
+admin.site.site_header = 'Adopta Regio'
+admin.site.index_title = 'Administracion'
+admin.site.site_title = 'Administracion'
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^buscador/', include('buscador.urls')),

@@ -1,8 +1,33 @@
 {% extends "buscador/base.html" %}
-{%	block content %}
-<ul>
-	{% for mascota in mascotas_list %}
-		<li>{{ mascota }}</li>
-	{% endfor %}
-</ul>
+{% load static %}
+{% block content %}
+<script type="text/javascript">
+		var mascotas = [
+			{% for mascota in mascotas_list %}
+			{
+			'id': '{{ mascota.pk }}',
+			'nombre': '{{ mascota.nombre }}',
+			'color': '{{ mascota.color }}',
+			'fecha': '{{ mascota.fecha_publicacion }}',
+			'tipo': '{{ mascota.tipo }}'},
+			{% endfor %}
+		];
+		var caracteristicas = [
+			'nombre',
+			'color',
+			'fecha',
+			'tipo'
+		]
+					</script>
+<div align="center">
+		<input type="text" id="buscar-texto">
+		<input id="buscar" type="submit" value = "buscar">
+	</div>
+	<div align="center" class="container" id="contenedor-lista">
+		<ul class="lista-mascota">
+			{% for mascota in mascotas_list %}
+				<li class="lista-mascota-item zoom shadows" id="{{ mascota.pk }}"><a href="{{ mascota.pk }}"><img class="" src="{{ mascota.picture }}" ></li>
+			{% endfor %}
+		</ul>
+	</div>
 {% endblock %}
