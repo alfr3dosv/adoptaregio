@@ -23,7 +23,7 @@ sudo apt install python-dev python-django
  
  2. Seleccionar la carpeta
  ```
- cd adoptaregio.git
+ cd adoptaregio
  ``` 
 
  3. Iniciar
