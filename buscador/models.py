@@ -26,7 +26,7 @@ class Animal(models.Model):
 	color = models.ForeignKey(Color, on_delete=models.CASCADE)
 	peso = models.IntegerField(default=0)
 	descripcion = models.CharField(max_length=200)
-	picture = models.ForeignKey(Picture, null=True)
+	picture = models.ForeignKey(Picture, null=True, on_delete=models.CASCADE)
 
 	def __str__(self):
 		return self.nombre
